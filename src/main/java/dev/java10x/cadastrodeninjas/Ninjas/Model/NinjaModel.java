@@ -1,10 +1,14 @@
-package dev.java10x.cadastrodeninjas.models;
+package dev.java10x.cadastrodeninjas.Ninjas.Model;
 
+import dev.java10x.cadastrodeninjas.Missions.Model.MissionsModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_registry")
@@ -16,6 +20,9 @@ public class NinjaModel {
   private String name;
   private String email;
   private int age;
+  @ManyToOne // A Ninja can only have one mission
+  @JoinColumn(name = "missions_id") // Foreign Key from tb_missions
+  private MissionsModel missions;
 
   public NinjaModel() {
   }
