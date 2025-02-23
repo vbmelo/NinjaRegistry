@@ -9,12 +9,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_registry")
 public class NinjaModel {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
-  String name;
-  String email;
-  int age;
+  private Long id;
+  private String name;
+  private String email;
+  private int age;
 
   public NinjaModel() {
   }
