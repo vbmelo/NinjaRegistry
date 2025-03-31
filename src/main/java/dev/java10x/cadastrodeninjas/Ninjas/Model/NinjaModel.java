@@ -30,7 +30,7 @@ public class NinjaModel {
   private String email;
 
   private int age;
-  
+
   @ManyToOne // A Ninja can only have one mission
   @JoinColumn(name = "missions_id") // Foreign Key from tb_missions
   private MissionsModel missions;
